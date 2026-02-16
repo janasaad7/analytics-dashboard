@@ -1,0 +1,80 @@
+{
+  "stats": [
+    {
+      "id": "total-revenue",
+      "title": "Total Revenue",
+      "value": 1280000,
+      "change": 12.5,
+      "trend": "up",
+      "icon": "💰",
+      "currency": "USD",
+      "requiredRoles": ["admin", "manager"]
+    },
+    {
+      "id": "total-users",
+      "title": "Active Users",
+      "value": 8547,
+      "change": 8.3,
+      "trend": "up",
+      "icon": "👥",
+      "requiredRoles": ["admin", "manager", "viewer"]
+    },
+    {
+      "id": "total-orders",
+      "title": "Orders Today",
+      "value": 234,
+      "change": -5.2,
+      "trend": "down",
+      "icon": "📦",
+      "requiredRoles": ["admin", "manager"]
+    },
+    {
+      "id": "conversion-rate",
+      "title": "Conversion Rate",
+      "value": 3.2,
+      "change": 15.7,
+      "trend": "up",
+      "icon": "📊",
+      "suffix": "%",
+      "requiredRoles": ["admin"]
+    },
+    {
+      "id": "avg-order-value",
+      "title": "Avg Order Value",
+      "value": 450,
+      "change": 7.8,
+      "trend": "up",
+      "icon": "🛒",
+      "currency": "USD",
+      "requiredRoles": ["admin", "manager"]
+    },
+    {
+      "id": "customer-satisfaction",
+      "title": "Customer Satisfaction",
+      "value": 4.8,
+      "change": 3.2,
+      "trend": "up",
+      "icon": "⭐",
+      "suffix": "/5",
+      "requiredRoles": ["admin", "manager", "viewer"]
+    },
+    {
+      "id": "pending-shipments",
+      "title": "Pending Shipments",
+      "value": 87,
+      "change": -12.3,
+      "trend": "down",
+      "icon": "🚚",
+      "requiredRoles": ["admin", "manager"]
+    },
+    {
+      "id": "support-tickets",
+      "title": "Open Support Tickets",
+      "value": 42,
+      "change": -8.5,
+      "trend": "down",
+      "icon": "🎫",
+      "requiredRoles": ["admin", "manager"]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "kpis": [
+    {
+      "id": "customer-satisfaction",
+      "name": "Customer Satisfaction",
+      "current": 87,
+      "target": 90,
+      "unit": "%",
+      "trend": "up",
+      "change": 5.2,
+      "status": "warning",
+      "description": "Overall customer satisfaction score",
+      "requiredRoles": ["admin", "manager", "viewer"]
+    },
+    {
+      "id": "employee-productivity",
+      "name": "Employee Productivity",
+      "current": 92,
+      "target": 85,
+      "unit": "%",
+      "trend": "up",
+      "change": 8.3,
+      "status": "success",
+      "description": "Average productivity across all departments",
+      "requiredRoles": ["admin", "manager"]
+    },
+    {
+      "id": "delivery-ontime",
+      "name": "On-Time Delivery Rate",
+      "current": 78,
+      "target": 95,
+      "unit": "%",
+      "trend": "down",
+      "change": -3.5,
+      "status": "danger",
+      "description": "Percentage of orders delivered on time",
+      "requiredRoles": ["admin", "manager"]
+    },
+    {
+      "id": "inventory-turnover",
+      "name": "Inventory Turnover",
+      "current": 6.5,
+      "target": 8,
+      "unit": "x",
+      "trend": "up",
+      "change": 2.1,
+      "status": "warning",
+      "description": "How many times inventory is sold per year",
+      "requiredRoles": ["admin"]
+    },
+    {
+      "id": "net-promoter-score",
+      "name": "Net Promoter Score",
+      "current": 72,
+      "target": 80,
+      "unit": "",
+      "trend": "up",
+      "change": 6.8,
+      "status": "warning",
+      "description": "Customer loyalty and satisfaction metric",
+      "requiredRoles": ["admin", "manager", "viewer"]
+    },
+    {
+      "id": "revenue-growth",
+      "name": "Revenue Growth",
+      "current": 15.3,
+      "target": 20,
+      "unit": "%",
+      "trend": "up",
+      "change": 12.5,
+      "status": "warning",
+      "description": "Year-over-year revenue growth",
+      "requiredRoles": ["admin", "manager"]
+    }
+  ]
+}

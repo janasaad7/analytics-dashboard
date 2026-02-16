@@ -1,0 +1,136 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ahmed Mohamed",
+      "email": "ahmed.mohamed@example.com",
+      "role": "admin",
+      "department": "IT",
+      "status": "active",
+      "lastLogin": "2024-02-04T10:30:00",
+      "joinDate": "2022-03-15",
+      "avatar": "https://i.pravatar.cc/150?img=1"
+    },
+    {
+      "id": 2,
+      "name": "Fatima Ali",
+      "email": "fatima.ali@example.com",
+      "role": "manager",
+      "department": "Sales",
+      "status": "active",
+      "lastLogin": "2024-02-04T09:15:00",
+      "joinDate": "2021-07-22",
+      "avatar": "https://i.pravatar.cc/150?img=5"
+    },
+    {
+      "id": 3,
+      "name": "Mahmoud Hassan",
+      "email": "mahmoud.hassan@example.com",
+      "role": "viewer",
+      "department": "Marketing",
+      "status": "active",
+      "lastLogin": "2024-02-03T14:20:00",
+      "joinDate": "2023-01-10",
+      "avatar": "https://i.pravatar.cc/150?img=12"
+    },
+    {
+      "id": 4,
+      "name": "Sara Khaled",
+      "email": "sara.khaled@example.com",
+      "role": "manager",
+      "department": "HR",
+      "status": "active",
+      "lastLogin": "2024-02-04T08:45:00",
+      "joinDate": "2022-09-05",
+      "avatar": "https://i.pravatar.cc/150?img=9"
+    },
+    {
+      "id": 5,
+      "name": "Omar Ibrahim",
+      "email": "omar.ibrahim@example.com",
+      "role": "viewer",
+      "department": "Finance",
+      "status": "active",
+      "lastLogin": "2024-02-02T16:30:00",
+      "joinDate": "2023-06-18",
+      "avatar": "https://i.pravatar.cc/150?img=15"
+    },
+    {
+      "id": 6,
+      "name": "Layla Youssef",
+      "email": "layla.youssef@example.com",
+      "role": "manager",
+      "department": "Operations",
+      "status": "active",
+      "lastLogin": "2024-02-04T11:00:00",
+      "joinDate": "2021-11-30",
+      "avatar": "https://i.pravatar.cc/150?img=20"
+    },
+    {
+      "id": 7,
+      "name": "Karim Nasser",
+      "email": "karim.nasser@example.com",
+      "role": "viewer",
+      "department": "Sales",
+      "status": "inactive",
+      "lastLogin": "2024-01-28T10:15:00",
+      "joinDate": "2022-04-12",
+      "avatar": "https://i.pravatar.cc/150?img=8"
+    },
+    {
+      "id": 8,
+      "name": "Nour Ahmed",
+      "email": "nour.ahmed@example.com",
+      "role": "manager",
+      "department": "IT",
+      "status": "active",
+      "lastLogin": "2024-02-04T07:50:00",
+      "joinDate": "2020-08-20",
+      "avatar": "https://i.pravatar.cc/150?img=25"
+    },
+    {
+      "id": 9,
+      "name": "Youssef Tarek",
+      "email": "youssef.tarek@example.com",
+      "role": "viewer",
+      "department": "Marketing",
+      "status": "active",
+      "lastLogin": "2024-02-03T15:45:00",
+      "joinDate": "2023-02-14",
+      "avatar": "https://i.pravatar.cc/150?img=33"
+    },
+    {
+      "id": 10,
+      "name": "Mona Samir",
+      "email": "mona.samir@example.com",
+      "role": "admin",
+      "department": "HR",
+      "status": "active",
+      "lastLogin": "2024-02-04T12:20:00",
+      "joinDate": "2021-05-08",
+      "avatar": "https://i.pravatar.cc/150?img=27"
+    },
+    {
+      "id": 11,
+      "name": "Hossam Fathy",
+      "email": "hossam.fathy@example.com",
+      "role": "viewer",
+      "department": "Finance",
+      "status": "active",
+      "lastLogin": "2024-02-01T13:25:00",
+      "joinDate": "2023-09-01",
+      "avatar": "https://i.pravatar.cc/150?img=18"
+    },
+    {
+      "id": 12,
+      "name": "Rana Salah",
+      "email": "rana.salah@example.com",
+      "role": "manager",
+      "department": "Marketing",
+      "status": "active",
+      "lastLogin": "2024-02-04T10:05:00",
+      "joinDate": "2022-01-20",
+      "avatar": "https://i.pravatar.cc/150?img=45"
+    }
+  ]
+}

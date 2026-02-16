@@ -1,0 +1,60 @@
+{
+  "dailySales": [
+    { "date": "2024-01-01", "amount": 45000, "category": "Electronics", "region": "North" },
+    { "date": "2024-01-02", "amount": 52000, "category": "Clothing", "region": "South" },
+    { "date": "2024-01-03", "amount": 38000, "category": "Electronics", "region": "East" },
+    { "date": "2024-01-04", "amount": 61000, "category": "Food", "region": "West" },
+    { "date": "2024-01-05", "amount": 47000, "category": "Electronics", "region": "North" },
+    { "date": "2024-01-06", "amount": 55000, "category": "Clothing", "region": "South" },
+    { "date": "2024-01-07", "amount": 49000, "category": "Food", "region": "East" },
+    { "date": "2024-01-08", "amount": 58000, "category": "Electronics", "region": "West" },
+    { "date": "2024-01-09", "amount": 44000, "category": "Books", "region": "North" },
+    { "date": "2024-01-10", "amount": 51000, "category": "Clothing", "region": "South" },
+    { "date": "2024-01-11", "amount": 62000, "category": "Electronics", "region": "East" },
+    { "date": "2024-01-12", "amount": 48000, "category": "Food", "region": "West" },
+    { "date": "2024-01-13", "amount": 54000, "category": "Electronics", "region": "North" },
+    { "date": "2024-01-14", "amount": 59000, "category": "Clothing", "region": "South" },
+    { "date": "2024-01-15", "amount": 41000, "category": "Books", "region": "East" },
+    { "date": "2024-01-16", "amount": 56000, "category": "Electronics", "region": "West" },
+    { "date": "2024-01-17", "amount": 50000, "category": "Food", "region": "North" },
+    { "date": "2024-01-18", "amount": 63000, "category": "Electronics", "region": "South" },
+    { "date": "2024-01-19", "amount": 46000, "category": "Clothing", "region": "East" },
+    { "date": "2024-01-20", "amount": 57000, "category": "Electronics", "region": "West" },
+    { "date": "2024-01-21", "amount": 53000, "category": "Food", "region": "North" },
+    { "date": "2024-01-22", "amount": 60000, "category": "Electronics", "region": "South" },
+    { "date": "2024-01-23", "amount": 42000, "category": "Books", "region": "East" },
+    { "date": "2024-01-24", "amount": 55000, "category": "Clothing", "region": "West" },
+    { "date": "2024-01-25", "amount": 49000, "category": "Electronics", "region": "North" },
+    { "date": "2024-01-26", "amount": 64000, "category": "Electronics", "region": "South" },
+    { "date": "2024-01-27", "amount": 47000, "category": "Food", "region": "East" },
+    { "date": "2024-01-28", "amount": 58000, "category": "Electronics", "region": "West" },
+    { "date": "2024-01-29", "amount": 52000, "category": "Clothing", "region": "North" },
+    { "date": "2024-01-30", "amount": 61000, "category": "Electronics", "region": "South" }
+  ],
+  "monthlySales": [
+    { "month": "January", "amount": 350000, "target": 400000 },
+    { "month": "February", "amount": 420000, "target": 400000 },
+    { "month": "March", "amount": 380000, "target": 450000 },
+    { "month": "April", "amount": 510000, "target": 450000 },
+    { "month": "May", "amount": 470000, "target": 500000 },
+    { "month": "June", "amount": 530000, "target": 500000 },
+    { "month": "July", "amount": 490000, "target": 520000 },
+    { "month": "August", "amount": 560000, "target": 520000 },
+    { "month": "September", "amount": 505000, "target": 530000 },
+    { "month": "October", "amount": 585000, "target": 550000 },
+    { "month": "November", "amount": 620000, "target": 600000 },
+    { "month": "December", "amount": 680000, "target": 650000 }
+  ],
+  "categoryBreakdown": [
+    { "category": "Electronics", "value": 450000, "percentage": 35, "color": "#4CAF50" },
+    { "category": "Clothing", "value": 380000, "percentage": 30, "color": "#2196F3" },
+    { "category": "Food", "value": 280000, "percentage": 22, "color": "#FF9800" },
+    { "category": "Books", "value": 170000, "percentage": 13, "color": "#9C27B0" }
+  ],
+  "regionalSales": [
+    { "region": "North", "sales": 320000, "growth": 12.5 },
+    { "region": "South", "sales": 450000, "growth": 18.3 },
+    { "region": "East", "sales": 280000, "growth": -5.2 },
+    { "region": "West", "sales": 390000, "growth": 15.7 }
+  ]
+}
