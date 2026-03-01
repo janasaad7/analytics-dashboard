@@ -1,7 +1,7 @@
 import { DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
 import { TThemeName } from '../models/theme-name.type';
 import { ITheme } from '../models/theme.model';
-import themes from '../../assets/data/themes.json';
+import themes from '../../../../public/assets/data/themes.json';
 
 @Injectable({
   providedIn: 'root',

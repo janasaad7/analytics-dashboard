@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-// import { RouterOutlet } from '@angular/router';
+import {Component, inject} from '@angular/core';
+import {ThemeService} from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class AppComponent {
-  title = 'analytics-dashboard';
+  themeService = inject(ThemeService);
 }
