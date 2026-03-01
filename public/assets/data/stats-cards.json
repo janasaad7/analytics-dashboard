@@ -8,7 +8,8 @@
       "trend": "up",
       "icon": "💰",
       "currency": "USD",
-      "requiredRoles": ["admin", "manager"]
+      "requiredRoles": ["admin", "manager"],
+      "visible": true
     },
     {
       "id": "total-users",
@@ -17,7 +18,8 @@
       "change": 8.3,
       "trend": "up",
       "icon": "👥",
-      "requiredRoles": ["admin", "manager", "viewer"]
+      "requiredRoles": ["admin", "manager", "viewer"],
+      "visible": true
     },
     {
       "id": "total-orders",
@@ -26,7 +28,8 @@
       "change": -5.2,
       "trend": "down",
       "icon": "📦",
-      "requiredRoles": ["admin", "manager"]
+      "requiredRoles": ["admin", "manager"],
+      "visible": true
     },
     {
       "id": "conversion-rate",
@@ -36,7 +39,8 @@
       "trend": "up",
       "icon": "📊",
       "suffix": "%",
-      "requiredRoles": ["admin"]
+      "requiredRoles": ["admin"],
+      "visible": true
     },
     {
       "id": "avg-order-value",
@@ -46,7 +50,8 @@
       "trend": "up",
       "icon": "🛒",
       "currency": "USD",
-      "requiredRoles": ["admin", "manager"]
+      "requiredRoles": ["admin", "manager"],
+      "visible": true
     },
     {
       "id": "customer-satisfaction",
@@ -56,7 +61,8 @@
       "trend": "up",
       "icon": "⭐",
       "suffix": "/5",
-      "requiredRoles": ["admin", "manager", "viewer"]
+      "requiredRoles": ["admin", "manager", "viewer"],
+      "visible": true
     },
     {
       "id": "pending-shipments",
@@ -65,7 +71,8 @@
       "change": -12.3,
       "trend": "down",
       "icon": "🚚",
-      "requiredRoles": ["admin", "manager"]
+      "requiredRoles": ["admin", "manager"],
+      "visible": true
     },
     {
       "id": "support-tickets",
@@ -74,7 +81,8 @@
       "change": -8.5,
       "trend": "down",
       "icon": "🎫",
-      "requiredRoles": ["admin", "manager"]
+      "requiredRoles": ["admin", "manager"],
+      "visible": true
     }
   ]
 }

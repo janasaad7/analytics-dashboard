@@ -1,0 +1,27 @@
+@reference "../../../../styles.scss";
+
+.stat-card{
+  @apply overflow-hidden box-border transition-opacity duration-200;
+  resize: both;
+  min-width: 180px;
+  min-height: 80px;
+  max-width: 500px;
+  max-height: 300px;
+
+  &:hover {
+    @apply opacity-85;
+  }
+
+  &::-webkit-resizer {
+    display: none;
+  }
+
+  &__trend{
+    &--up{
+      @apply text-green-500;
+    }
+    &--down{
+      @apply text-red-700;
+    }
+  }
+}

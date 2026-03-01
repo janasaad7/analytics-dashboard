@@ -1,0 +1,9 @@
+<div class="stats-grid">
+  @for(stat of visibleStats(); track stat.id){
+    <app-stat-card
+      [stat]="stat"
+      (removeCard)="hideStatCard($event)"
+    ></app-stat-card>
+  }
+</div>
+
