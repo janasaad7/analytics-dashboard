@@ -1,6 +1,5 @@
 import { TRole } from './role.type';
-
-export type TTrend = 'up' | 'down';
+import {TTrend} from './trend.type';
 
 export interface IStat {
   id: string;
