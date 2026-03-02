@@ -2,12 +2,14 @@ import {Component, input, output} from '@angular/core';
 import { IStat } from '../../../core/models/stat.model';
 import {RoleAccessDirective} from '../../../core/directives/role-access.directive';
 import {CurrencyPipe} from '@angular/common';
+import {WidgetWrapperComponent} from '../widget-wrapper/widget-wrapper.component';
 
 @Component({
   selector: 'app-stat-card',
   imports: [
     RoleAccessDirective,
-    CurrencyPipe
+    CurrencyPipe,
+    WidgetWrapperComponent
   ],
   templateUrl: './stat-card.component.html',
   styleUrl: './stat-card.component.scss',

@@ -1,11 +1,13 @@
 import {Component, computed, input, output} from '@angular/core';
 import {RoleAccessDirective} from '../../../core/directives/role-access.directive';
 import {IKpi} from '../../../core/models/kpi.model';
+import {WidgetWrapperComponent} from '../widget-wrapper/widget-wrapper.component';
 
 @Component({
   selector: 'app-kpi-gauge',
   imports: [
-    RoleAccessDirective
+    RoleAccessDirective,
+    WidgetWrapperComponent
   ],
   templateUrl: './kpi-gauge.component.html',
   styleUrl: './kpi-gauge.component.scss',
