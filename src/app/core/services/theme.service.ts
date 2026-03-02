@@ -1,4 +1,4 @@
-import { DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
+import {afterRenderEffect, DOCUMENT, inject, Injectable, signal} from '@angular/core';
 import { TThemeName } from '../models/theme-name.type';
 import { ITheme } from '../models/theme.model';
 import themes from '../../../../public/assets/data/themes.json';
@@ -13,7 +13,7 @@ export class ThemeService {
   currentTheme = signal<ITheme>(this.#themes['light']);
 
   constructor() {
-    effect(() => {
+    afterRenderEffect(() => {
       this.#applyTheme(this.currentTheme());
     });
   }

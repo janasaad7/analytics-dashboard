@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-data-table',
   imports: [],
   templateUrl: './data-table.component.html',
-  styleUrl: './data-table.component.css',
+  styleUrl: './data-table.component.scss',
 })
 export class DataTableComponent {
 
