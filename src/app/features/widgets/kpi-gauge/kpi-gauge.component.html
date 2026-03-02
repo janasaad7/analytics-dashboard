@@ -1,1 +1,59 @@
-<p>kpi-gauge works!</p>
+<div class="kpi-gauge card relative border border-gray-400 rounded-lg shadow-md p-2 flex flex-col items-center w-82 h-25" *appRoleAccess="kpi().requiredRoles">
+  <button
+    class="absolute top-1 right-1 text-gray-400 hover:text-red-400 transition-colors hover:cursor-pointer"
+    (click)="dismissKpi()"
+    aria-label="Remove Widget"
+  >
+    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/>
+    </svg>
+  </button>
+
+  <div class="kpi-card__header flex flex-col items-center justify-center overflow-hidden w-full">
+    <span class="kpi-card__header__title font-bold text-lg text-center truncate w-full">{{ kpi().name }}</span>
+    <span class="kpi-card__header__description text-gray-500 text-center truncate w-full">{{ kpi().description }}</span>
+  </div>
+
+  <div class="relative w-full flex justify-center">
+    <svg viewBox="0 0 200 110" class="w-full max-w-48">
+      <!-- Track -->
+      <path
+        d="M25 100 A75 75 0 0 1 175 100"
+        fill="none"
+        stroke="#d1d5db"
+        stroke-width="14"
+        stroke-linecap="round"
+      />
+      <!-- Fill -->
+      <path
+        d="M25 100 A75 75 0 0 1 175 100"
+        fill="none"
+        [attr.stroke]="statusColor()"
+        stroke-width="14"
+        stroke-linecap="round"
+        [attr.stroke-dasharray]="circumference"
+        [attr.stroke-dashoffset]="dashOffset()"
+      />
+      <text x="100" y="90" text-anchor="middle" class="kpi-card__details__current font-extrabold text-3xl fill-gray-700">
+        {{ kpi().current }}{{ kpi().unit }}
+      </text>
+    </svg>
+  </div>
+
+  <div class="flex flex-row justify-between gap-10">
+    <span class="text-gray-500">0</span>
+    <div class="kpi-card__trend text-sm font-bold flex flex-row gap-0 items-center justify-start truncate" [style.color]="statusColor()">
+      @if(isTrendPositive()){
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
+        </svg>
+      } @else{
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"/>
+        </svg>
+      }
+      {{ kpi().change }}{{ kpi().unit }}
+    </div>
+    <span class="text-gray-500">{{ kpi().target }}</span>
+  </div>
+</div>

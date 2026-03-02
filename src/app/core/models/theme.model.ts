@@ -9,4 +9,7 @@ export interface ITheme {
   gridColor: string;
   cardBackground: string;
   chartColors: string[];
+  successColor: string;
+  warningColor: string;
+  dangerColor: string;
 }

@@ -1,0 +1,8 @@
+<div class="kpis-grid">
+  @for(kpi of visibleKpis(); track kpi.id){
+    <app-kpi-gauge
+      [kpi]="kpi"
+      (removeKpi)="hideKpi($event)"
+    ></app-kpi-gauge>
+  }
+</div>

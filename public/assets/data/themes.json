@@ -16,7 +16,10 @@
       "#00BCD4",
       "#FFEB3B",
       "#795548"
-    ]
+    ],
+    "successColor": "#22c55e",
+    "warningColor": "#f59e0b",
+    "dangerColor":  "#ef4444"
   },
   "dark": {
     "name": "dark",
@@ -35,7 +38,10 @@
       "#26C6DA",
       "#FFEE58",
       "#8D6E63"
-    ]
+    ],
+    "successColor": "#4ade80",
+    "warningColor": "#fbbf24",
+    "dangerColor":  "#f87171"
   },
   "custom": {
     "name": "custom",
@@ -54,6 +60,9 @@
       "#06b6d4",
       "#8b5cf6",
       "#f97316"
-    ]
+    ],
+    "successColor": "#10b981",
+    "warningColor": "#f59e0b",
+    "dangerColor":  "#ef4444"
   }
 }

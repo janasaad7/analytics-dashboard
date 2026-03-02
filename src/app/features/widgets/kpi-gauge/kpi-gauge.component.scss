@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.kpi-gauge {
+  @apply overflow-hidden box-border transition-opacity duration-200;
+  resize: both;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 500px;
+  max-height: 400px;
+
+  &:hover {
+    @apply opacity-85;
+  }
+
+  &::-webkit-resizer {
+    display: none;
+  }
+}
+
