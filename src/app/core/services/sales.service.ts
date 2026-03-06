@@ -2,16 +2,19 @@ import {computed, inject, Injectable} from '@angular/core';
 import {DashboardFilterService} from './dashboard-filter.service';
 import salesData from '../../../../public/assets/data/sales-data.json'
 import {ChartDataset} from 'chart.js';
+import {ThemeService} from './theme.service';
+
 @Injectable({
   providedIn: 'root',
 })
 export class SalesService {
-  filters = inject(DashboardFilterService);
+  #filtersService = inject(DashboardFilterService);
+  #themeService = inject(ThemeService);
 
   filteredDailySales = computed(() => {
-    const range = this.filters.dateRange();
-    const category = this.filters.category();
-    const region = this.filters.region();
+    const range = this.#filtersService.dateRange();
+    const category = this.#filtersService.category();
+    const region = this.#filtersService.region();
 
     if (range === 'year') return [];
 
@@ -25,9 +28,9 @@ export class SalesService {
       ...day,
       amount: (() => {
         const match = salesData.dailySales.find(
-          d => d.date === day.date &&
-            (category === 'All' || d.category === category) &&
-            (region === 'All' || d.region === region)
+          dailySale => dailySale.date === day.date &&
+            (category === 'All' || dailySale.category === category) &&
+            (region === 'All' || dailySale.region === region)
         );
         return match ? match.amount : 0;
       })()
@@ -39,18 +42,20 @@ export class SalesService {
   });
 
   lineChartData = computed(() => {
-    const range = this.filters.dateRange();
+    const range = this.#filtersService.dateRange();
+    const theme = this.#themeService.currentTheme();
+    const chartColors = theme.chartColors;
 
     if (range === 'year') {
       const monthlySales = this.filteredMonthlySales();
       return {
-        labels: monthlySales.map(m => m.month),
+        labels: monthlySales.map(monthlySale => monthlySale.month),
         datasets: [
           {
             label: 'Actual Sales',
-            data: monthlySales.map(m => m.amount),
-            borderColor: 'var(--chart-color-1)',
-            backgroundColor: 'rgba(76, 175, 80, 0.1)',
+            data: monthlySales.map(monthlySale => monthlySale.amount),
+            borderColor: chartColors[0],
+            backgroundColor: chartColors[0] + '1A',
             tension: 0.4,
             fill: true,
             pointRadius: 4,
@@ -58,13 +63,14 @@ export class SalesService {
           } as ChartDataset<'line'>,
           {
             label: 'Target',
-            data: monthlySales.map(m => m.target),
-            borderColor: 'var(--chart-color-2)',
+            data: monthlySales.map(monthlySale => monthlySale.target),
+            borderColor: chartColors[1],
             backgroundColor: 'transparent',
             tension: 0.4,
             borderDash: [5, 5],
             fill: false,
             pointRadius: 3,
+            pointHoverRadius: 5,
           } as ChartDataset<'line'>,
         ],
       };
@@ -77,8 +83,8 @@ export class SalesService {
         {
           label: 'Daily Sales',
           data: sales.map(d => d.amount),
-          borderColor: 'var(--chart-color-1)',
-          backgroundColor: 'rgba(76, 175, 80, 0.1)',
+          borderColor: chartColors[0],
+          backgroundColor: chartColors[0] + '1A',
           tension: 0.4,
           fill: true,
           pointRadius: 4,
