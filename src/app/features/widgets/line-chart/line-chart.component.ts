@@ -41,6 +41,7 @@ export class LineChartComponent {
           bodyColor: theme.textColor,
           borderColor: theme.primaryColor,
           borderWidth: 1,
+          usePointStyle: true,
         },
       },
       scales: {

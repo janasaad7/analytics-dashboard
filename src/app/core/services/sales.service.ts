@@ -93,4 +93,24 @@ export class SalesService {
       ],
     };
   });
+
+  barChartData = computed(() => {
+    const theme = this.#themeService.currentTheme();
+    const chartColors = theme.chartColors;
+    const regions = salesData.regionalSales;
+
+    return {
+      labels: regions.map(r => r.region),
+      datasets: [
+        {
+          label: 'Regional Sales',
+          data: regions.map(r => r.sales),
+          backgroundColor: regions.map((_, i) => chartColors[i] + '99'),
+          borderColor: regions.map((_, i) => chartColors[i]),
+          borderWidth: 2,
+          borderRadius: 6,
+        } as ChartDataset<'bar'>,
+      ],
+    };
+  });
 }
