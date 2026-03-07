@@ -1,6 +1,5 @@
-import {Component, computed, inject} from '@angular/core';
-import {ChartConfiguration} from 'chart.js';
-import {SalesService} from '../../../core/services/sales.service';
+import {Component, computed, inject, input} from '@angular/core';
+import {ChartConfiguration, ChartData} from 'chart.js';
 import {ThemeService} from '../../../core/services/theme.service';
 import {WidgetWrapperComponent} from '../widget-wrapper/widget-wrapper.component';
 import {BaseChartDirective} from 'ng2-charts';
@@ -16,9 +15,9 @@ import {BaseChartDirective} from 'ng2-charts';
 })
 export class BarChartComponent {
   #themeService = inject(ThemeService);
-  #salesService = inject(SalesService);
 
-  chartData = this.#salesService.barChartData;
+  title = input.required();
+  chartData = input.required<ChartData<'bar'>>();
 
   chartOptions = computed<ChartConfiguration<'bar'>['options']>(() => {
     const theme = this.#themeService.currentTheme();
