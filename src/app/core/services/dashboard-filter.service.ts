@@ -5,7 +5,7 @@ import {TCategory, TDateRange, TRegion} from '../models/filters.type';
   providedIn: 'root'
 })
 export class DashboardFilterService {
-  dateRange = signal<TDateRange>('week');
+  dateRange = signal<TDateRange>('year');
   category = signal<TCategory>('All');
   region = signal<TRegion>('All');
 

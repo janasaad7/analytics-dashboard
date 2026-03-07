@@ -1,1 +1,20 @@
-<p>pie-chart works!</p>
+<app-widget-wrapper
+  customClasses="flex flex-col w-100 h-50 min-w-100 min-h-50 max-w-300 max-h-300"
+>
+  <h1 class="font-bold text-lg text-center shrink-0">{{ title() }}</h1>
+
+  <div class="flex-1 relative min-h-0 min-w-0">
+    @defer (on idle) {
+      <canvas
+        baseChart
+        type="pie"
+        class="absolute inset-0"
+        [datasets]="chartData().datasets"
+        [labels]="chartData().labels"
+        [options]="chartOptions()"
+      ></canvas>
+    } @placeholder {
+      <div>Loading chart...</div>
+    }
+  </div>
+</app-widget-wrapper>

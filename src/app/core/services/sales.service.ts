@@ -11,56 +11,35 @@ export class SalesService {
   #filtersService = inject(DashboardFilterService);
   #themeService = inject(ThemeService);
 
-  #dailySalesDateFilter = computed(() => {
-    const range = this.#filtersService.dateRange();
-    const days = range === 'week' ? 7 : 30;
-    return salesData.dailySales.slice(-days);
-  });
-
-  #dailySalesDateAndCategoryFilter = computed(() => {
-    const category = this.#filtersService.category();
-    const sales = this.#dailySalesDateFilter();
-    if (category === 'All') return sales;
-    return sales.filter(d => d.category === category);
-  });
-
-  #dailySalesDateAndRegionFilter = computed(() => {
-    const region = this.#filtersService.region();
-    const sales = this.#dailySalesDateFilter();
-    if (region === 'All') return sales;
-    return sales.filter(d => d.region === region);
-  });
-
-  filteredDailySales = computed(() => {
+  // ── filtered by date + category + region (line chart only) ──
+  #filteredDailySales = computed(() => {
     const range = this.#filtersService.dateRange();
     const category = this.#filtersService.category();
     const region = this.#filtersService.region();
 
     if (range === 'year') return [];
 
-    const sales = this.#dailySalesDateFilter();
-    return sales.filter(d =>
+    const days = range === 'week' ? 7 : 30;
+    const lastNDays = salesData.dailySales.slice(-days);
+
+    return lastNDays.filter(d =>
       (category === 'All' || d.category === category) &&
       (region === 'All' || d.region === region)
     );
   });
 
-  filteredMonthlySales = computed(() => {
-    return salesData.monthlySales;
-  });
-
+  // ── Line chart — date + category + region ──
   lineChartData = computed(() => {
     const range = this.#filtersService.dateRange();
     const chartColors = this.#themeService.currentTheme().chartColors;
 
     if (range === 'year') {
-      const monthlySales = this.filteredMonthlySales();
       return {
-        labels: monthlySales.map(monthlySale => monthlySale.month),
+        labels: salesData.monthlySales.map(s => s.month),
         datasets: [
           {
             label: 'Actual Sales',
-            data: monthlySales.map(monthlySale => monthlySale.amount),
+            data: salesData.monthlySales.map(s => s.amount),
             borderColor: chartColors[0],
             backgroundColor: chartColors[0] + '1A',
             tension: 0.4,
@@ -70,7 +49,7 @@ export class SalesService {
           } as ChartDataset<'line'>,
           {
             label: 'Target',
-            data: monthlySales.map(monthlySale => monthlySale.target),
+            data: salesData.monthlySales.map(s => s.target),
             borderColor: chartColors[1],
             backgroundColor: 'transparent',
             tension: 0.4,
@@ -83,13 +62,13 @@ export class SalesService {
       };
     }
 
-    const sales = this.filteredDailySales();
+    const sales = this.#filteredDailySales();
     return {
-      labels: sales.map(dailySale => dailySale.date),
+      labels: sales.map(d => d.date),
       datasets: [
         {
           label: 'Daily Sales',
-          data: sales.map(dailySale => dailySale.amount),
+          data: sales.map(d => d.amount),
           borderColor: chartColors[0],
           backgroundColor: chartColors[0] + '1A',
           tension: 0.4,
@@ -101,20 +80,15 @@ export class SalesService {
     };
   });
 
-  regionsBarChartData = computed(() => {
+  barChartData = computed(() => {
     const chartColors = this.#themeService.currentTheme().chartColors;
-    const sales = this.#dailySalesDateAndCategoryFilter();
     const regions = salesData.regionalSales;
 
     return {
-      labels: regions.map(regionalSale => regionalSale.region),
+      labels: regions.map(r => r.region),
       datasets: [
         {
-          data: regions.map(regionalSale =>
-            sales
-              .filter(dailySale => dailySale.region === regionalSale.region)
-              .reduce((sum, dailySale) => sum + dailySale.amount, 0)
-          ),
+          data: regions.map(r => r.sales),
           backgroundColor: regions.map((_, i) => chartColors[i] + '99'),
           borderColor: regions.map((_, i) => chartColors[i]),
           borderWidth: 2,
@@ -124,25 +98,19 @@ export class SalesService {
     };
   });
 
-  categoriesBarChartData = computed(() => {
+  pieChartData = computed(() => {
     const chartColors = this.#themeService.currentTheme().chartColors;
-    const sales = this.#dailySalesDateAndRegionFilter();
     const categories = salesData.categoryBreakdown;
 
     return {
-      labels: categories.map(categorySale => categorySale.category),
+      labels: categories.map(c => c.category),
       datasets: [
         {
-          data: categories.map(categorySale =>
-            sales
-              .filter(dailySale => dailySale.category === categorySale.category)
-              .reduce((sum, dailySale) => sum + dailySale.amount, 0)
-          ),
-          backgroundColor: categories.map((_, i) => chartColors[i] + '99'),
+          data: categories.map(c => c.value),
+          backgroundColor: categories.map((_, i) => chartColors[i] + 'CC'),
           borderColor: categories.map((_, i) => chartColors[i]),
           borderWidth: 2,
-          borderRadius: 6,
-        } as ChartDataset<'bar'>,
+        } as ChartDataset<'pie'>,
       ],
     };
   });
